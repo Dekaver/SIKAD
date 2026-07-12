@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\major;
+use App\Models\Major;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class MajorController extends Controller
 {
@@ -12,7 +13,7 @@ class MajorController extends Controller
      */
     public function index()
     {
-        $majors = major::paginate(10);
+        $majors = Major::paginate(10);
         return view('module.major.index', compact('majors'));
     }
 
@@ -35,39 +36,58 @@ class MajorController extends Controller
             'description' => 'required|min:10',
         ]);
 
-        $major = major::create($request->all());
+        $major = Major::create($request->all());
         return redirect()->route('program-studi.index')->with('success', 'Major created successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(major $major)
+    public function show(Major $major)
     {
-        //
+        abort(404);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(major $major)
+    public function edit(Major $program_studi)
     {
-        //
+        return view('module.major.edit', compact('program_studi'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, major $major)
+    public function update(Request $request, Major $program_studi)
     {
-        //
+        $request->validate([
+            'name' => [
+                'required',
+                'string',
+                'min:3',
+                Rule::unique('majors')->ignore($program_studi->id)
+            ],
+            'code' => [
+                'required',
+                'string',
+                'min:2',
+                'max:4',
+                Rule::unique('majors')->ignore($program_studi->id)
+            ],
+            'description' => 'required|min:10',
+        ]);
+
+        $program_studi->update($request->all());
+        return redirect()->route('program-studi.index')->with('success', 'Major updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(major $major)
+    public function destroy(Major $program_studi)
     {
-        //
+        $program_studi->delete();
+        return redirect()->route('program-studi.index')->with('success', 'Major deleted successfully');
     }
 }
