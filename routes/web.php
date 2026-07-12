@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 
     // admin
     Route::middleware('role:admin')->group(function () {
-        Route::resource('major', MajorController::class);
+        Route::resource('program-studi', MajorController::class);
     });
 
     // lecture

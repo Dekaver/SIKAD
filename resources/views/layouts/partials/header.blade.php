@@ -60,5 +60,18 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
+    /* input Number */
+    /* Untuk Chrome, Safari, Edge, dan Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Untuk Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
 </style>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
