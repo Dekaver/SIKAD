@@ -10,13 +10,10 @@
 
     <!-- Toggle input for small screens (no JS) -->
     <input id="nav-toggle" type="checkbox" aria-hidden="true" />
-
     <div class="layout relative flex min-h-screen">
-
 
         <!-- Sidebar -->
         @include('layouts.partials.sidebar')
-
 
         <!-- Overlay for small screens -->
         <label for="nav-toggle" class="overlay" aria-hidden="true"></label>
@@ -29,15 +26,6 @@
 
             <!-- Page content -->
             <main class="flex-1 w-full py-4 dark:bg-gray-700">
-                <!-- Page Heading -->
-                @isset($header)
-                    <div class="max-w-7xl mx-auto px-4 sm:px-2 lg:px-4 mb-4">
-                        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                            {{ $header }}
-                        </h2>
-                    </div>
-                @endisset
-
                 <div class="max-w-7xl mx-auto px-4 sm:px-2 lg:px-4 dark:text-gray-100">
                     {{ $slot }}
                 </div>

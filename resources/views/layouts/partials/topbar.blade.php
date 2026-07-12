@@ -14,11 +14,14 @@
                     </svg>
                 </label>
 
-                <div class="text-lg font-semibold dark:text-gray-100">Overview</div>
-                <div
+
+                @isset($header)
+                    <div class="text-lg font-semibold dark:text-gray-100">{{ $header }}</div>
+                @endisset
+                {{-- <div
                     class="hidden md:flex items-center text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded ml-3 dark:bg-gray-700">
                     Insights &amp; metrics
-                </div>
+                </div> --}}
             </div>
 
             <div class="flex items-center gap-3">
