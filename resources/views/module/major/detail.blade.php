@@ -29,7 +29,7 @@
             <div class="col-span-12 flex flex-col">
                 <x-input-label for="description" :value="__('Deskripsi Program Studi')" />
                 <x-textarea id="description" name="description" placeholder="Deskripsi Program Studi"
-                    class="mt-1 block w-full" value="{{ $program_studi->description }}" required autofocus />
+                    class="mt-1 block w-full" required autofocus>{{ $program_studi->description }}</x-textarea>
                 <x-input-error :messages="$errors->get('description')" class="mt-2" />
             </div>
         </div>
