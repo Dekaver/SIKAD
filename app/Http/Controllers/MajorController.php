@@ -43,9 +43,9 @@ class MajorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Major $major)
+    public function show(Major $program_studi)
     {
-        abort(404);
+        return view('module.major.detail', compact('program_studi'));
     }
 
     /**

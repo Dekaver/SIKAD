@@ -26,7 +26,7 @@
 
             <!-- Page content -->
             <main class="flex-1 w-full py-4 dark:bg-gray-700">
-                <div class="max-w-7xl mx-auto px-4 sm:px-2 lg:px-4 dark:text-gray-100">
+                <div class=" mx-auto px-4 sm:px-2 lg:px-4 dark:text-gray-100">
                     {{ $slot }}
                 </div>
             </main>
@@ -34,7 +34,7 @@
             <!-- Footer -->
             <footer class="bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                 <div
-                    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-gray-500 flex items-center justify-between dark:text-gray-400 dark:bg-gray-800">
+                    class="mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-gray-500 flex items-center justify-between dark:text-gray-400 dark:bg-gray-800">
                     <div>© 2026 Company — All rights reserved</div>
                     <div class="hidden sm:flex gap-4">
                         <a href="#" class="hover:underline">Privacy</a>

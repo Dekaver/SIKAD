@@ -1,6 +1,6 @@
 <header
     class="w-full sticky top-0 z-10 bg-white border-b border-gray-200 datk:border-gray-700 dark:bg-gray-800 dark:border-gray-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
         <div class="h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <!-- Mobile menu button (visible on small screens) -->

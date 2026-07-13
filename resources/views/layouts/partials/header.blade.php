@@ -2,8 +2,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>{{ config('app.name', 'Laravel') }}</title>
-<!-- Tailwind via CDN (Play) - suitable for prototype/demo -->
-<script src="https://cdn.tailwindcss.com"></script>
 <style>
     /* Small extra utilities not in Tailwind CDN for this demo */
     :root {

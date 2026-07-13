@@ -4,13 +4,20 @@
     </x-slot>
 
     {{-- New Button --}}
-    <div class="pt-2">
-        <a href="{{ route('program-studi.create') }}"
-            class="text-white bg-green-500 dark:bg-green-600 border-0 py-2 px-4 focus:outline-none dark:hover:bg-green-800 rounded text-lg flex items-center justify-center max-w-min">
-            <x-lucide-plus width="20" height="20" class="inline" />
-            {{ __('Tambah') }}
-        </a>
-    </div>
+    <x-card>
+        <div class="flex justify-between gap-2 items-center">
+            <a href="{{ route('program-studi.create') }}"
+                class="text-white dark:text-gray-100 bg-green-500 dark:bg-green-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-green-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
+                <x-lucide-plus width="20" height="20" class="inline" />
+                {{ __('Tambah') }}
+            </a>
+            <a href="#" onclick="alert('Fitur belum tersedia')"
+                class="text-white dark:text-gray-100 bg-violet-500 dark:bg-violet-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-violet-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
+                <x-lucide-download width="20" height="20" class="inline" />
+                {{ __('Export') }}
+            </a>
+        </div>
+    </x-card>
     {{-- Table --}}
     <div class="py-4">
         <div
@@ -60,6 +67,10 @@
                                     {{ $row->name }}
                                 </td>
                                 <td class="px-6 py-4 text-right">
+                                    <a href="{{ route('program-studi.show', $row->id) }}"
+                                        class="text-yellow-600 hover:underline">
+                                        <x-lucide-eye width="20" height="20" class="inline" />
+                                    </a>
                                     <a href="{{ route('program-studi.edit', $row->id) }}"
                                         class="text-indigo-600 hover:underline">
                                         <x-lucide-edit width="20" height="20" class="inline" />
