@@ -29,11 +29,12 @@
             @csrf
             <div>
                 <label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                    Username / NIM / NIDN
+                    Email
                 </label>
 
                 <input type="text" name="email" placeholder="Masukkan Email" type="email"
                     class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
             <div>
@@ -42,6 +43,7 @@
                 </label>
                 <input type="password" name="password" placeholder="••••••••"
                     class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
