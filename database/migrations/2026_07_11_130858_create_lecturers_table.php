@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('major_id')->constrained()->onDelete('cascade');
-            $table->string('nidn');
-            $table->string('name');
-            $table->string('place_of_birth')->nullable();
+            $table->string('nidn', 10);
+            $table->string('email', 50)->nullable();
+            $table->string('name', 50);
+            $table->string('phone', 15)->nullable();
+            $table->string('place_of_birth', 20)->nullable();
             $table->date('birth_date')->nullable();
             $table->enum('gender', ['laki_laki', 'perempuan']);
-            $table->string('address')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }
