@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MajorController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,18 +20,17 @@ Route::middleware('auth')->group(function () {
 
     // admin
     Route::middleware('role:admin')->group(function () {
+        Route::resource('user', UserController::class);
         Route::resource('program-studi', MajorController::class);
     });
 
     // lecture
-    Route::middleware('role:user')->group(function () {
-    });
+    Route::middleware('role:user')->group(function () {});
 
     // student
-    Route::middleware('role:student')->group(function () {
-    });
+    Route::middleware('role:student')->group(function () {});
 });
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
