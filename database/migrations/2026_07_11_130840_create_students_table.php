@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('major_id')->constrained()->onDelete('cascade');
             $table->string('nim', 10); // 26.07.11.1.001 : tahun, prodi, fakultas, semester, nomor urut
-            $table->string('email', 50);
+            $table->string('email', 100);
             $table->string('name', 50);
             $table->string('phone', 15);
             $table->string('place_of_birth', 20)->nullable();

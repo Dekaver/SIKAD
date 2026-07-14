@@ -38,8 +38,45 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+
+    // State khusus untuk membuat Admin
+    public function admin(): static
+    {
+        return $this->state(fn(array $attributes) => [
+            'role' => 'admin',
+        ]);
+    }
+
+    // State khusus untuk membuat Lecturer
+    public function lecturer(): static
+    {
+        return $this->state(function (array $attributes) {
+            // Mengubah nama acak menjadi format 'namadepan.namabelakang' lowercase
+            $cleanName = Str::slug($attributes['name'], '.');
+
+            return [
+                'role' => 'lecturer',
+                'email' => "{$cleanName}@lecturer.poltekborneomedistra.ac.id",
+            ];
+        });
+    }
+
+    // State khusus untuk membuat Student
+    public function student(): static
+    {
+        return $this->state(function (array $attributes) {
+            // Generate 10 digit angka acak unik untuk NIM
+            $nim = fake()->unique()->numerify('##########');
+
+            return [
+                'role' => 'student',
+                'email' => "{$nim}@student.poltekborneomedistra.ac.id",
+            ];
+        });
     }
 }
