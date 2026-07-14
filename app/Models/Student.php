@@ -23,6 +23,10 @@ class Student extends Model
         'term',
     ];
 
+    protected $casts = [
+        'birth_date' => 'date',
+    ];
+
     public function major()
     {
         return $this->belongsTo(Major::class);
