@@ -5,7 +5,7 @@
             <div class="flex items-center gap-3">
                 <!-- Mobile menu button (visible on small screens) -->
                 <label for="nav-toggle"
-                    class="cursor-pointer p-2 lg:hidden inline-flex items-center justify-center rounded-md hover:bg-gray-100 dark:hover:bg-gray-700"
+                    class="cursor-pointer p-2 lg:hidden inline-flex items-center justify-center rounded-md border dark:bg-gray-300 hover:bg-gray-200 dark:hover:bg-white"
                     title="Toggle menu">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -33,11 +33,11 @@
                 <button class="p-2 rounded-full hover:bg-gray-100" title="Notifications">🔔</button>
 
                 <div class="flex items-center gap-2">
-                    <img src="https://ui-avatars.com/api/?name=Admin&background=6366F1&color=fff" alt="avatar"
-                        class="h-8 w-8 rounded-full" />
+                    <img src="{{ 'https://ui-avatars.com/api/?name=' . auth()->user()->name . '&background=6366F1&color=fff ?>' }}"
+                        alt="avatar" class="h-8 w-8 rounded-full" />
                     <div class="hidden sm:block text-sm">
-                        <div class="font-medium dark:text-gray-100">Admin User</div>
-                        <div class="text-xs text-gray-500">Administrator</div>
+                        <div class="font-medium dark:text-gray-100">{{ auth()->user()->name }}</div>
+                        <div class="text-xs text-gray-500">{{ auth()->user()->role }}</div>
                     </div>
                 </div>
             </div>
