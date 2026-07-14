@@ -6,7 +6,7 @@
     {{-- Button --}}
     <x-card>
         <div class="flex justify-between gap-2 items-center">
-            <a href="{{ route('program-studi.create') }}"
+            <a href="{{ route('major.create') }}"
                 class="text-white dark:text-gray-100 bg-green-500 dark:bg-green-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-green-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
                 <x-lucide-plus width="20" height="20" class="inline" />
                 {{ __('Tambah') }}
@@ -68,18 +68,18 @@
                                     {{ $row->name }}
                                 </td>
                                 <td class="px-6 py-4 text-right">
-                                    <a href="{{ route('program-studi.show', $row->id) }}"
+                                    <a href="{{ route('major.show', $row->id) }}"
                                         class="text-yellow-600 hover:underline">
                                         <x-lucide-eye width="20" height="20" class="inline" />
                                     </a>
-                                    <a href="{{ route('program-studi.edit', $row->id) }}"
+                                    <a href="{{ route('major.edit', $row->id) }}"
                                         class="text-indigo-600 hover:underline">
                                         <x-lucide-edit width="20" height="20" class="inline" />
                                     </a>
                                     <a class="text-red-600 hover:underline" x-data="" href="#"
                                         x-on:click.prevent="
                                             $dispatch('open-modal', 'confirm-deletion')
-                                            $dispatch('set-delete-data', { url: '{{ route('program-studi.destroy', $row->id) }}', message: '{{ $row->name }}' })
+                                            $dispatch('set-delete-data', { url: '{{ route('major.destroy', $row->id) }}', message: '{{ $row->name }}' })
                                         ">
                                         <x-lucide-trash width="20" height="20" class="inline" />
                                     </a>

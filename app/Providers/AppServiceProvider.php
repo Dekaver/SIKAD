@@ -21,16 +21,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('admin', function (User $user) {
-            return $user->hasRole('admin') ? true : null;
-        });
+        // Ambil semua daftar permission unik dari file config
+        $matrix = config('permissions.role_permissions', []);
+        $allPermissions = array_unique(array_merge(...array_values($matrix)));
 
-        Gate::define('student', function (User $user) {
-            return $user->hasRole('student') ? true : null;
-        });
-
-        Gate::define('lecturer', function (User $user) {
-            return $user->hasRole('lecturer') ? true : null;
-        });
+        // Daftarkan setiap permission secara otomatis ke Laravel Gate
+        foreach ($allPermissions as $permission) {
+            Gate::define($permission, function (User $user) use ($permission) {
+                return $user->hasPermission($permission);
+            });
+        }
     }
 }

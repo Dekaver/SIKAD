@@ -6,11 +6,13 @@
     {{-- New Button --}}
     <x-card>
         <div class="flex justify-between gap-2 items-center">
-            <a href="{{ route('lecturer.create') }}"
-                class="text-white dark:text-gray-100 bg-green-500 dark:bg-green-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-green-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
-                <x-lucide-plus width="20" height="20" class="inline" />
-                {{ __('Tambah') }}
-            </a>
+            @can('lecturer.create')
+                <a href="{{ route('lecturer.create') }}"
+                    class="text-white dark:text-gray-100 bg-green-500 dark:bg-green-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-green-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
+                    <x-lucide-plus width="20" height="20" class="inline" />
+                    {{ __('Tambah') }}
+                </a>
+            @endcan
             <a href="#" onclick="alert('Fitur belum tersedia')"
                 class="text-white dark:text-gray-100 bg-violet-500 dark:bg-violet-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-violet-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
                 <x-lucide-download width="20" height="20" class="inline" />
@@ -82,21 +84,27 @@
                                     {{ $row->email }}
                                 </td>
                                 <td class="px-6 py-4 text-right">
-                                    <a href="{{ route('lecturer.show', $row->id) }}"
-                                        class="text-yellow-600 hover:underline">
-                                        <x-lucide-eye width="20" height="20" class="inline" />
-                                    </a>
-                                    <a href="{{ route('lecturer.edit', $row->id) }}"
-                                        class="text-indigo-600 hover:underline">
-                                        <x-lucide-edit width="20" height="20" class="inline" />
-                                    </a>
-                                    <a class="text-red-600 hover:underline" x-data="" href="#"
-                                        x-on:click.prevent="
+                                    @can('lecturer.read')
+                                        <a href="{{ route('lecturer.show', $row->id) }}"
+                                            class="text-yellow-600 hover:underline">
+                                            <x-lucide-eye width="20" height="20" class="inline" />
+                                        </a>
+                                    @endcan
+                                    @can('lecturer.update')
+                                        <a href="{{ route('lecturer.edit', $row->id) }}"
+                                            class="text-indigo-600 hover:underline">
+                                            <x-lucide-edit width="20" height="20" class="inline" />
+                                        </a>
+                                    @endcan
+                                    @can('lecturer.delete')
+                                        <a class="text-red-600 hover:underline" x-data="" href="#"
+                                            x-on:click.prevent="
                                             $dispatch('open-modal', 'confirm-deletion')
                                             $dispatch('set-delete-data', { url: '{{ route('lecturer.destroy', $row->id) }}', message: '{{ $row->name }}' })
                                         ">
-                                        <x-lucide-trash width="20" height="20" class="inline" />
-                                    </a>
+                                            <x-lucide-trash width="20" height="20" class="inline" />
+                                        </a>
+                                    @endcan
                                 </td>
                             </tr>
                         @empty

@@ -7,7 +7,7 @@
 
     <x-card>
         <div class="flex justify-between gap-2 items-center">
-            <a href="{{ route('program-studi.index') }}"
+            <a href="{{ route('major.index') }}"
                 class="text-white dark:text-gray-100 bg-secondary border border-gray-400 py-2 px-4 focus:outline-none dark:hover:bg-gray-900 rounded text-lg flex items-center justify-center max-w-min gap-2">
                 <x-lucide-arrow-left width="20" height="20" class="inline" />
                 {{ __('Batal') }}
@@ -16,7 +16,7 @@
     </x-card>
 
     <div class="rounded-md shadow-sm py-4 bg-slate-50 dark:bg-gray-800 p-4 mt-4">
-        <form action="{{ route('program-studi.store') }}" method="POST">
+        <form action="{{ route('major.store') }}" method="POST">
             @csrf
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-6 flex flex-col">

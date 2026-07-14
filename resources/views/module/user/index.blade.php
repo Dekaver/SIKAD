@@ -6,11 +6,13 @@
     {{-- New Button --}}
     <x-card>
         <div class="flex justify-between gap-2 items-center">
-            <a href="{{ route('user.create') }}"
-                class="text-white dark:text-gray-100 bg-green-500 dark:bg-green-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-green-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
-                <x-lucide-plus width="20" height="20" class="inline" />
-                {{ __('Tambah') }}
-            </a>
+            @can('user.create')
+                <a href="{{ route('user.create') }}"
+                    class="text-white dark:text-gray-100 bg-green-500 dark:bg-green-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-green-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
+                    <x-lucide-plus width="20" height="20" class="inline" />
+                    {{ __('Tambah') }}
+                </a>
+            @endcan
             <a href="#" onclick="alert('Fitur belum tersedia')"
                 class="text-white dark:text-gray-100 bg-violet-500 dark:bg-violet-700 border-0 py-2 px-4 focus:outline-none dark:hover:bg-violet-800 rounded text-lg flex items-center justify-center max-w-min gap-2">
                 <x-lucide-download width="20" height="20" class="inline" />

@@ -32,11 +32,13 @@
     @endcan
 
 
-    <div class="py-4">
-        <x-card>
-            @include('profile.partials.update-profile-information-form')
-        </x-card>
-    </div>
+    @canany(['student', 'lecturer'])
+        <div class="py-4">
+            <x-card>
+                @include('profile.partials.update-profile-information-form')
+            </x-card>
+        </div>
+    @endcanany
 
     <div class="py-4">
         <x-card>

@@ -39,13 +39,12 @@
 
         <x-slot name="footer">
             <div class="flex justify-end gap-2">
-                <x-secondary-button onclick="window.location.href = ('{{ route('user.index') }}')">
-                    {{ __('Kembali') }}
-                </x-secondary-button>
-                <a href="{{ route('user.edit', $user->id) }}"
-                    class="p-3 text-white bg-yellow-500 dark:bg-yellow-700 border rounded-md border-gray-200 dark:border-gray-700">
-                    Edit
-                </a>
+                @can('user.update')
+                    <a href="{{ route('user.edit', $user->id) }}"
+                        class="p-3 text-white bg-yellow-500 dark:bg-yellow-700 border rounded-md border-gray-200 dark:border-gray-700">
+                        Edit
+                    </a>
+                @endcan
             </div>
         </x-slot>
     </x-card>

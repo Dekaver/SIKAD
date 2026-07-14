@@ -113,14 +113,15 @@
                 </div>
             </div>
 
-
-            <div class="flex items-center justify-end mt-4">
-                <x-primary-button class="ml-4">
-                    {{ __('Simpan') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </div>
+            @can('lecturer.update')
+                <div class="flex items-center justify-end mt-4">
+                    <x-primary-button class="ml-4">
+                        {{ __('Simpan') }}
+                    </x-primary-button>
+                </div>
+            </form>
+        </div>
+    @endcan
 
 
 </x-app-layout>

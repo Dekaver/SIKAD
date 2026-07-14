@@ -12,11 +12,12 @@
                 <x-lucide-arrow-left width="20" height="20" class="inline" />
                 {{ __('Kembali') }}
             </a>
-
-            <a href="{{ route('lecturer.edit', $lecturer->id) }}"
-                class="text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded text-lg flex items-center justify-center gap-2">
-                {{ __('Edit Dosen') }}
-            </a>
+            @can('lecturer.update')
+                <a href="{{ route('lecturer.edit', $lecturer->id) }}"
+                    class="text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded text-lg flex items-center justify-center gap-2">
+                    {{ __('Edit Dosen') }}
+                </a>
+            @endcan
         </div>
     </x-card>
 

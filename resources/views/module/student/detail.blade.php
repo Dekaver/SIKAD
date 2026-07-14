@@ -13,10 +13,12 @@
                 {{ __('Kembali') }}
             </a>
 
-            <a href="{{ route('student.edit', $student->id) }}"
-                class="text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded text-lg flex items-center justify-center gap-2">
-                {{ __('Edit Mahasiswa') }}
-            </a>
+            @can('student.update')
+                <a href="{{ route('student.edit', $student->id) }}"
+                    class="text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded text-lg flex items-center justify-center gap-2">
+                    {{ __('Edit Mahasiswa') }}
+                </a>
+            @endcan
         </div>
     </x-card>
 

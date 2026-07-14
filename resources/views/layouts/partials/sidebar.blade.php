@@ -17,21 +17,27 @@
             <span class="w-6 text-center">🏠</span>
             <span class="truncate">Home</span>
         </a>
-        <a href="/program-studi"
-            class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 ">
-            <span class="w-6 text-center">📦</span>
-            <span>Program Studi</span>
-        </a>
-        <a href="/lecturer"
-            class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 ">
-            <span class="w-6 text-center">👨‍🏫</span>
-            <span>Dosen</span>
-        </a>
-        <a href="/student"
-            class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 ">
-            <span class="w-6 text-center">🎓</span>
-            <span>Mahasiswa</span>
-        </a>
+        @can('major.read')
+            <a href="/major"
+                class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 ">
+                <span class="w-6 text-center">📦</span>
+                <span>Program Studi</span>
+            </a>
+        @endcan
+        @can('lecturer.read')
+            <a href="/lecturer"
+                class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 ">
+                <span class="w-6 text-center">👨‍🏫</span>
+                <span>Dosen</span>
+            </a>
+        @endcan
+        @can('student.read')
+            <a href="/student"
+                class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-100 ">
+                <span class="w-6 text-center">🎓</span>
+                <span>Mahasiswa</span>
+            </a>
+        @endcan
     </nav>
 
     <div class="pt-4 border-t border-gray-100 dark:border-gray-700 mt-auto">

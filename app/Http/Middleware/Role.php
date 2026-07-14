@@ -13,8 +13,14 @@ class Role
      *
      * @param  Closure(Request): (Response)  $next
      */
-    public function handle(Request $request, Closure $next, string ...$role): Response
+    public function handle(Request $request, Closure $next, string ...$roles): Response
     {
-        return $next($request);
+        foreach ($roles as $role) {
+            if ($request->user()->hasRole($role)) {
+                return $next($request);
+            }
+        }
+
+        abort(403);
     }
 }

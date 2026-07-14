@@ -44,4 +44,19 @@ class User extends Authenticatable
     {
         return $this->role === $role;
     }
+
+    // Mengambil daftar permission berdasarkan role user saat ini
+    public function permissions(): array
+    {
+        $matrix = config('permissions.role_permissions', []);
+
+        // Mengembalikan array permission milik role user, atau array kosong jika tidak ketemu
+        return $matrix[$this->role] ?? [];
+    }
+
+    // Fungsi untuk cek apakah user punya permission tertentu
+    public function hasPermission(string $permission): bool
+    {
+        return in_array($permission, $this->permissions());
+    }
 }
