@@ -17,12 +17,12 @@ return new class extends Migration
             $table->foreignId('major_id')->constrained()->onDelete('cascade');
             $table->string('nidn');
             $table->string('name');
-            $table->string('place_of_birth');
-            $table->date('birth_date');
-            $table->string('gender');
-            $table->string('address');
-            $table->string('email');
-            $table->string('phone');
+            $table->string('place_of_birth')->nullable();
+            $table->date('birth_date')->nullable();
+            $table->enum('gender', ['laki_laki', 'perempuan']);
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }

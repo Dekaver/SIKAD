@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MajorController;
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware('role:admin')->group(function () {
         Route::resource('user', UserController::class);
         Route::resource('program-studi', MajorController::class);
+        Route::resource('lecturer', LecturerController::class);
     });
 
     // lecture

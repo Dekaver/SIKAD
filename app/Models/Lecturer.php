@@ -21,6 +21,10 @@ class Lecturer extends Model
         'phone',
     ];
 
+    protected $casts = [
+        'birth_date' => 'date'
+    ];
+
     public function major()
     {
         return $this->belongsTo(Major::class);
