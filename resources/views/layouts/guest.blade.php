@@ -1,30 +1,63 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body class="h-full bg-slate-100 dark:bg-slate-950">
+
+    <div class="grid min-h-screen lg:grid-cols-2">
+
+        <!-- Login -->
+        <div class="flex items-center justify-center p-8">
+
+            <div class="w-full max-w-md">
                 {{ $slot }}
             </div>
+
         </div>
-    </body>
+
+        <!-- Hero -->
+        <div class="relative hidden overflow-hidden lg:block">
+
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80"
+                class="absolute inset-0 h-full w-full object-cover" alt="Campus">
+
+            <div class="absolute inset-0 bg-blue-900/60"></div>
+
+            <div class="relative flex h-full items-center justify-center p-20">
+
+                <div class="max-w-lg text-white">
+
+                    <h2 class="text-5xl font-bold leading-tight">
+                        Sistem Informasi Akademik
+                    </h2>
+
+                    <p class="mt-6 text-lg leading-8 text-blue-100">
+                        Menghubungkan mahasiswa, dosen, dan administrator
+                        dalam satu platform yang modern, cepat, dan mudah digunakan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
 </html>
