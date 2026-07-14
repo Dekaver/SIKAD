@@ -20,18 +20,17 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'role' => 'admin'
             ],
-
             [
                 'name' => 'Fajri Achmad Jafar',
-                'email' => 'fajri@lecture.poltekborneomedistra.ac.id',
+                'email' => 'fajri@lecturer.poltekborneomedistra.ac.id',
                 'password' => Hash::make('password'),
-                'role' => 'dosen'
+                'role' => 'lecturer'
             ],
             [
                 'name' => 'Fajar Saputra',
                 'email' => 'fajar@student.poltekborneomedistra.ac.id',
                 'password' => Hash::make('password'),
-                'role' => 'mahasiswa'
+                'role' => 'student'
             ]
         ]);
     }

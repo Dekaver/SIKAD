@@ -14,7 +14,6 @@ class MajorSeeder extends Seeder
     {
         Major::insertOrIgnore([
             [
-                'id' => 2,
                 'name' => 'Informatika',
                 'code' => 'IF',
                 'code_number' => '01',
@@ -23,7 +22,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 3,
                 'name' => 'Sistem Informasi',
                 'code' => 'SI',
                 'code_number' => '02',
@@ -32,7 +30,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 4,
                 'name' => 'Teknik Komputer',
                 'code' => 'TK',
                 'code_number' => '03',
@@ -41,7 +38,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 5,
                 'name' => 'Teknik Elektro',
                 'code' => 'TE',
                 'code_number' => '04',
@@ -50,7 +46,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 6,
                 'name' => 'Teknik Sipil',
                 'code' => 'TS',
                 'code_number' => '05',
@@ -59,7 +54,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 7,
                 'name' => 'Teknik Industri',
                 'code' => 'TI',
                 'code_number' => '06',
@@ -68,7 +62,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 8,
                 'name' => 'Manajemen',
                 'code' => 'MN',
                 'code_number' => '07',
@@ -77,7 +70,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 9,
                 'name' => 'Akuntansi',
                 'code' => 'AK',
                 'code_number' => '08',
@@ -86,7 +78,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 10,
                 'name' => 'Hukum',
                 'code' => 'HK',
                 'code_number' => '09',
@@ -95,7 +86,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 11,
                 'name' => 'Ilmu Komunikasi',
                 'code' => 'IK',
                 'code_number' => '10',
@@ -104,7 +94,6 @@ class MajorSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 12,
                 'name' => 'Administrasi Publik',
                 'code' => 'AP',
                 'code_number' => '11',

@@ -67,7 +67,7 @@
                                 </td>
                                 <td
                                     class="px-6 py-4 text-sm text-gray-700 whitespace-nowrap dark:text-gray-300 dark:hover:text-white">
-                                    {{ $row->lecturer?->name ?? '-' }}
+                                    {{ $row->major?->name ?? '-' }}
                                 </td>
                                 <td
                                     class="px-6 py-4 text-sm text-gray-700 whitespace-nowrap dark:text-gray-300 dark:hover:text-white">

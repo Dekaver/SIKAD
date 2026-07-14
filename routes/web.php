@@ -4,6 +4,7 @@ use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MajorController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
@@ -24,10 +25,11 @@ Route::middleware('auth')->group(function () {
         Route::resource('user', UserController::class);
         Route::resource('program-studi', MajorController::class);
         Route::resource('lecturer', LecturerController::class);
+        Route::resource('student', StudentController::class);
     });
 
-    // lecture
-    Route::middleware('role:user')->group(function () {});
+    // lecturer
+    Route::middleware('role:lecturer')->group(function () {});
 
     // student
     Route::middleware('role:student')->group(function () {});
