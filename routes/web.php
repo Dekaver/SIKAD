@@ -19,13 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::middleware('role:admin,lecturer,student')->group(function () {});
+
     // admin
     Route::middleware('role:admin')->group(function () {
         Route::resource('user', UserController::class);
         Route::resource('program-studi', MajorController::class);
         Route::resource('lecturer', LecturerController::class);
         Route::resource('student', StudentController::class);
-    });
+    })->prefix('admin');
 
     // lecturer
     Route::middleware('role:lecturer')->group(function () {});

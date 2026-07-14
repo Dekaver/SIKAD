@@ -3,7 +3,7 @@
         {{ __('Program studi') }}
     </x-slot>
 
-    {{-- New Button --}}
+    {{-- Button --}}
     <x-card>
         <div class="flex justify-between gap-2 items-center">
             <a href="{{ route('program-studi.create') }}"
@@ -18,6 +18,7 @@
             </a>
         </div>
     </x-card>
+
     {{-- Table --}}
     <div class="py-4">
         <div

@@ -39,4 +39,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Student::class);
     }
+
+    public function hasRole(string $role)
+    {
+        return $this->role === $role;
+    }
 }

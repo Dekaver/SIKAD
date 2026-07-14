@@ -5,25 +5,43 @@
         </h2>
     </x-slot>
 
-    <div class="py-4">
-        <div class="sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
-            </div>
+    <x-card>
+        <div class="flex justify-between gap-2 items-center">
+            <a href="{{ route('dashboard') }}"
+                class="text-white dark:text-gray-100 bg-secondary border border-gray-400 py-2 px-4 focus:outline-none dark:hover:bg-gray-900 rounded text-lg flex items-center justify-center max-w-min gap-2">
+                <x-lucide-arrow-left width="20" height="20" class="inline" />
+                {{ __('Kembali') }}
+            </a>
         </div>
+    </x-card>
+
+    @can('student')
+        <div class="py-4">
+            <x-card>
+                @include('profile.partials.akademik-student-information')
+            </x-card>
+        </div>
+    @endcan
+
+    @can('lecturer')
+        <div class="py-4">
+            <x-card>
+                @include('profile.partials.akademik-lecturer-information')
+            </x-card>
+        </div>
+    @endcan
+
+
+    <div class="py-4">
+        <x-card>
+            @include('profile.partials.update-profile-information-form')
+        </x-card>
+    </div>
+
+    <div class="py-4">
+        <x-card>
+
+            @include('profile.partials.update-password-form')
+        </x-card>
     </div>
 </x-app-layout>
