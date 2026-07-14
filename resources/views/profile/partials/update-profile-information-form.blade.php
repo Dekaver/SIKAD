@@ -45,19 +45,21 @@
             {{-- Tanggal Lahir --}}
             <div>
                 <x-input-label for="birth_date" value="Tanggal Lahir" />
+                @php $birth_date = $user->student?->birth_date ?? $user->lecturer?->birth_date @endphp
                 <x-text-input id="birth_date" name="birth_date" type="date" class="mt-1 block w-full"
-                    :value="old('birth_date', $user->birth_date)" />
+                    :value="old('birth_date', $birth_date->format('Y-m-d'))" />
             </div>
 
             {{-- Jenis Kelamin --}}
             <div>
                 <x-input-label for="code_number" :value="__('Jenis Kelamin')" />
+                @php $gender = $user->student?->gender ?? $user->lecturer?->gender @endphp
                 <select name="gender"
                     class="mt-1 block w-full bg-white border border-gray-400 py-2 px-4 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600"
                     required>
                     <option value="">{{ __('Pilih Jenis Kelamin') }}</option>
-                    <option value="laki_laki" @selected(old('gender', $user->gender) == 'laki_laki')>{{ __('Laki-laki') }}</option>
-                    <option value="perempuan" @selected(old('gender', $user->gender) == 'perempuan')>{{ __('Perempuan') }}</option>
+                    <option value="laki_laki" @selected(old('gender', $gender) == 'laki_laki')>{{ __('Laki-laki') }}</option>
+                    <option value="perempuan" @selected(old('gender', $gender) == 'perempuan')>{{ __('Perempuan') }}</option>
                 </select>
                 <x-input-error :messages="$errors->get('code_number')" class="mt-2" />
             </div>
@@ -66,8 +68,9 @@
 
         <div>
             <x-input-label for="address" value="Alamat" />
+            @php $address = $user->student?->address ?? $user->lecturer?->address @endphp
             <x-textarea id="address" name="address" rows="4"
-                class="mt-1 block w-full rounded-md border-gray-300">{{ old('address', $user->address) }}</x-textarea>
+                class="mt-1 block w-full rounded-md border-gray-300">{{ old('address', $address) }}</x-textarea>
         </div>
 
 

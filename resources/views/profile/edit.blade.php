@@ -15,30 +15,30 @@
         </div>
     </x-card>
 
-    @can('student')
+    @if (auth()->user()->hasRole('student'))
         <div class="py-4">
             <x-card>
                 @include('profile.partials.akademik-student-information')
             </x-card>
         </div>
-    @endcan
+    @endif
 
-    @can('lecturer')
+    @if (auth()->user()->hasRole('lecturer'))
         <div class="py-4">
             <x-card>
                 @include('profile.partials.akademik-lecturer-information')
             </x-card>
         </div>
-    @endcan
+    @endif
 
 
-    @canany(['student', 'lecturer'])
+    @if (auth()->user()->hasRole('student') || auth()->user()->hasRole('lecturer'))
         <div class="py-4">
             <x-card>
                 @include('profile.partials.update-profile-information-form')
             </x-card>
         </div>
-    @endcanany
+    @endif
 
     <div class="py-4">
         <x-card>

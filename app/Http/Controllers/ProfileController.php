@@ -29,8 +29,16 @@ class ProfileController extends Controller
     {
         $request->user()->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        if ($request->user()->hasRole('student')) {
+            $student = $request->user()->student;
+            $student->email = $request->email;
+            $student->name = $request->name;
+            $student->phone = $request->phone;
+            $student->place_of_birth = $request->place_of_birth;
+            $student->birth_date = $request->birth_date;
+            $student->gender = $request->gender;
+            $student->address = $request->address;
+            $student->save();
         }
 
         $request->user()->save();
