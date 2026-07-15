@@ -44,7 +44,7 @@
         <div class="text-xs text-gray-500 uppercase mb-2 dark:text-gray-400">Quick</div>
         {{-- <div class="flex justify-between gap-2 items-center"> --}}
         <a href="{{ route('profile.edit') }}"
-            class="text-white dark:text-gray-100 bg-secondary py-2 px-4 focus:outline-none dark:hover:bg-gray-900 rounded text-lg flex items-start justify-normal  gap-2">
+            class="text-gray-800 hover:text-gray-900 hover:bg-gray-200 dark:text-gray-100 bg-secondary py-2 px-4 focus:outline-none dark:hover:bg-gray-900 rounded text-lg flex items-start justify-normal  gap-2">
             <x-lucide-user width="20" height="20" class="inline" />
             {{ __('Profile') }}
         </a>
