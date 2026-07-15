@@ -303,6 +303,44 @@ php artisan optimize:clear
 
 ---
 
+# Demo Account
+
+Setelah menjalankan migration dan seeder, sistem akan membuat beberapa akun demo yang dapat digunakan untuk mencoba aplikasi.
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@poltekborneomedistra.ac.id | password |
+| Dosen | fajri@lecturer.poltekborneomedistra.ac.id | password |
+| Mahasiswa | 0123456789@student.poltekborneomedistra.ac.id | password |
+
+### Hak Akses
+
+#### Admin
+- Login ke sistem
+- Mengelola Program Studi
+- Mengelola Dosen
+- Mengelola Mahasiswa
+- Mengelola User
+- Melihat seluruh data akademik
+
+#### Dosen
+- Login ke sistem
+- Melihat data pribadi
+- Mengubah data profil
+- Melihat data Program Studi
+
+#### Mahasiswa
+- Login ke sistem
+- Melihat data pribadi
+- Mengubah data profil
+- Melihat data Program Studi
+
+> **Catatan**
+>
+> Akun di atas hanya digunakan sebagai akun demo. Untuk penggunaan sebenarnya, seluruh akun dikelola oleh Admin sehingga tidak tersedia fitur registrasi mandiri.
+
+---
+
 # Struktur Project
 
 ```
@@ -341,3 +379,4 @@ public/
 # License
 
 Project ini dibuat untuk kebutuhan Sistem Informasi Akademik (SIKAD).
+
