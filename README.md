@@ -34,10 +34,10 @@ Sistem Informasi Akademik (SIKAD) berbasis Laravel 13.
 
 # Instalasi
 
-Clone repository
+### Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Dekaver/SIKAD.git
 cd SIKAD
 ```
 
@@ -373,6 +373,7 @@ public/
 - Vite
 - Blade
 - MySQL
+
 
 ---
 
