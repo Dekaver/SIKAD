@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Fajar Saputra',
-                'email' => 'fajar@student.poltekborneomedistra.ac.id',
+                'email' => '0123456789@student.poltekborneomedistra.ac.id',
                 'password' => Hash::make('password'),
                 'role' => 'student'
             ]

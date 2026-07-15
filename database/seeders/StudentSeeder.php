@@ -15,8 +15,8 @@ class StudentSeeder extends Seeder
         Student::insertOrIgnore([
             'user_id' => 3,
             'major_id' => 1,
-            'nim' => '11181007',
-            'email' => 'fajar@student.poltekborneomedistra.ac.id',
+            'nim' => '0123456789',
+            'email' => '0123456789@student.poltekborneomedistra.ac.id',
             'phone' => '08123456789',
             'name' => 'Fajar Saputra',
             'place_of_birth' => 'Contoh',
